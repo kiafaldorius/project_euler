@@ -2,8 +2,7 @@
 
 def euler_5(max = 20)
   require 'mathn'
-  max.downto(1).reduce do |n, x|
-    n ||= 1
+  max.downto(1).reduce(1) do |n, x|
     n = (n*x) / n.gcd(x) if n%x != 0;
     n
   end
