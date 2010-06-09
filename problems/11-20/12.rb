@@ -4,12 +4,12 @@ def euler_12(target = 500)
   max = num = term = result = 0
   until max > target do
     num+=term+=1
-    count = 1.upto(Math.sqrt(num).ceil).to_a.collect do |n|
+    count = 1.upto(Math.sqrt(num).ceil).collect do |n|
         n if num % n == 0
-      end.compact
-    if count.length*2 > max
+      end.compact.length*2
+    if count > max
       result = num
-      max = count.length*2
+      max = count
     end
   end
   result
