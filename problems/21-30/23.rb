@@ -5,7 +5,7 @@
 # See http://www.research.att.com/~njas/sequences/A048242
 def euler_23
   max = 20161
-  bounty = [] #(1..max).to_a
+  bounty = []
   abundants = []
   divisors = lambda do |x| # similar to the one in problem 21, but without the dictionary/cache
     div = 2.upto(Math.sqrt(x).ceil).reduce([]) do |n, j|
@@ -15,11 +15,6 @@ def euler_23
     div+1
   end
   (12..max).each { |i| abundants << i if divisors.call(i) > i }
-  #raise abundants.inspect
-#  while abundants.length > 0 do
-#    a = abundants.pop
-#    bounty.delete_if 
-#  end
   while abundants.length > 0 do
     a = abundants.shift
     bounty << (a*2)
